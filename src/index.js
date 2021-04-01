@@ -4,9 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import * as UserPost from'./pages/components/UserPost';
+import SignUp from './pages/SignUp';
+import LogIn from './pages/LogIn';
+import Feed from './pages/Feed';
+import {BrowserRouter , Route,Switch} from 'react-router-dom';
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    	<Switch>
+    		<Route exact path='/' component={App}/>
+    		<Route exact path='/signup' component={SignUp}/>
+    		<Route exact path='/login' component={LogIn}/>
+        <Route exact path='/home' component={Feed}/>
+       
+    	</Switch>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -15,3 +30,4 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
