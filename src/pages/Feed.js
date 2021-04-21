@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "./components/NavBar/NavBar";
 import {authFunctions, profileFunctions} from "../firebase";
 import {Redirect} from "react-router-dom";
+import PostList from "./components/PostList";
 import {Box, Button, Dialog, DialogTitle, DialogContent, TextField} from "@material-ui/core";
 
 const outerContainer = {
@@ -75,6 +76,7 @@ class Feed extends  React.Component{
 			user: null,
 			signout: false,
 			posting: false,
+			posts: []
 
 		}
 		this.handleSignOut = this.handleSignOut.bind(this);
@@ -126,6 +128,7 @@ class Feed extends  React.Component{
 					<UploadDialog open={this.state.posting} onClose={this.closePostModal}/>
 
 				</Box>
+				<PostList />
 
 			</div>
 

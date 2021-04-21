@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import {feedFunctions} from "../../../firebase";
 
 const searchContainer = {
     position: "fixed",
@@ -34,7 +34,8 @@ class SearchBar extends React.Component{
                 type = "text"
                 className = "search-bar-dropdown"
                 placeholder = "Search Other Hackees Here..."
-                style = {searchBarStyle}/>
+                style = {searchBarStyle}
+                onChange = {(e) => feedFunctions.searchUser(e.target.value, this)}/>
                 <ul style = {{position: "fixed", width: "30%", top: "8%", right: "51.3%"}}>
                     {this.state.search_results.map((item) => <a style = {{textDecoration: "none"}}>
                         <button style = {{outline: "none"}} className = "list-group-item list-group-item-action">{item.name}</button>
