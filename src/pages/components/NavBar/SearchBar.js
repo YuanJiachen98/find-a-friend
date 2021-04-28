@@ -36,8 +36,8 @@ class SearchBar extends React.Component{
                 placeholder = "Search Other Hackees Here..."
                 style = {searchBarStyle}
                 onChange = {(e) => feedFunctions.searchUser(e.target.value, this)}/>
-                <ul style = {{position: "fixed", width: "30%", top: "8%", right: "51.3%"}}>
-                    {this.state.search_results.map((item) => <a style = {{textDecoration: "none"}}>
+                <ul style = {{position: "fixed", width: "30%", top: "8%", right: "51.3%"}} >
+                    {this.state.search_results.map((item) => <a style = {{textDecoration: "none"}} href={`/profile/${item.uid}`}>
                         <button style = {{outline: "none"}} className = "list-group-item list-group-item-action">{item.name}</button>
                     </a> )}
                 </ul>         

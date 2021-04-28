@@ -45,6 +45,7 @@ class UploadDialog extends React.Component{
 
 	}
 	handleSubmit(){
+		profileFunctions.postOnTimeline(this.state.text, this.state.attachment);
 		this.props.onClose();
 
 	}
