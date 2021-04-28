@@ -52,11 +52,11 @@ class UploadDialog extends React.Component{
 	render(){
 		return(
 			<Dialog open= {this.props.open} onClose = {this.props.onClose} aria-labelledby = "simple-dialog-title" fullWidth scroll="paper">
-			 <DialogTitle>Write ur post</DialogTitle>
+			 <DialogTitle>Write your post</DialogTitle>
 			 <DialogContent>
 				 <TextField 
 				 placeholder="What's on ur mind?"
-				 onChange = {{}}
+				 onChange = {this.handleText}
 				 multiline
 				 rows = {4}
 				 fullWidth/>
@@ -129,7 +129,7 @@ class Feed extends  React.Component{
 					<UploadDialog open={this.state.posting} onClose={this.closePostModal}/>
 
 				</Box>
-				<PostList />
+				<PostList type="feed" />
 
 			</div>
 

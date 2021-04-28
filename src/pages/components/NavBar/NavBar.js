@@ -83,7 +83,7 @@ class NavBar extends React.Component{
 					<h1 style = {{whiteSpace: "nowrap" , paddingRight: "3rem"}}>Find-A-Friend</h1>
 					<SearchBar />
 					<ul style ={NavMenuStyle}>
-						<a herf = "/"><StyledButton>Home</StyledButton></a>
+						<a href ='/'><StyledButton>Home</StyledButton></a>
 						{profileButton}
 
 					</ul>
